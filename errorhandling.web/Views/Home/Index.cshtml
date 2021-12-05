@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col">
+        <h2>Various error handling patterns</h2>
+        <h3>Ajax call</h3>
+        Press this <button id="ajaxButton1" class="btn btn-dark">button</button> to make ajax call that succeeds.
+        Press this <button id="ajaxButton2" class="btn btn-danger">button</button> to make ajax call that fails.
+        <div id="ajaxCallResult"></div>
+    </div>
+</div>
+
+
+<div class="position-relative">
+    <div class="toast-container position-absolute top-0 end-0 p-3">
+        
+        <div class="toast">
+            <div class="toast-header">
+                <strong class="me-auto">Toast Header</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">
+                <p>Some text inside the toast body</p>
+            </div>
+        </div>
+        <div class="toast">
+            <div class="toast-header">
+                <strong class="me-auto">Toast Header</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">
+                <p>Some text inside the toast body</p>
+            </div>
+        </div>
+    
+
+    </div>
+</div>
+
+@section Scripts
+{
+<script>
+
+    let toast = () => {
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function(toastEl) {
+            return new bootstrap.Toast(toastEl)
+        });
+        toastList.forEach(toast => toast.show());
+    }
+
+
+    let ajaxButton1 = document.getElementById("ajaxButton1");
+    let ajaxButton2 = document.getElementById("ajaxButton2");
+    let ajaxCallResultEl = document.getElementById("ajaxCallResult");
+
+    let ajaxCall = (shouldFail) => {
+        fetch('/Home/AjaxCall?shouldFail=' + shouldFail).then(response => {
+            if (!response.ok) {
+                console.error(response);
+                response.json().then(function(data) {
+                    ajaxCallResultEl.innerText = data.message;
+
+                });
+                return;
+            }
+            console.log(response);
+
+            response.json().then(function(data) {
+                console.log(data);
+                ajaxCallResultEl.innerText = data.message;
+            });
+
+        }).catch(error => {
+            ajaxCallResultEl.innerText = "Something really bad happened. Error: " + error;
+        });
+
+    }
+
+    ajaxButton1.addEventListener('click',
+        e => {
+            ajaxCall(false);
+            toast();
+        });
+
+    ajaxButton2.addEventListener('click',
+        e => {
+            ajaxCall(true);
+        });
+
+</script>
+}

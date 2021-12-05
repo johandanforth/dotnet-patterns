@@ -1,0 +1,60 @@
+﻿
+using LongRunning.WebApi2.Settings;
+
+using Microsoft.Extensions.Options;
+
+namespace LongRunning.WebApi2.Services;
+
+public class SimpleHostedService : IHostedService, IDisposable
+{
+    private readonly ILogger<SimpleHostedService> _logger;
+    private readonly IOptions<SearchServiceOptions> _settings;
+
+    public SimpleHostedService(ILogger<SimpleHostedService> logger, IOptions<SearchServiceOptions> settings)
+    {
+        _logger=logger;
+        _settings = settings;
+    }
+
+    public void Dispose()
+    {
+        //throw new NotImplementedException();
+    }
+
+    public Task StartAsync(CancellationToken cancellationToken)
+    {
+        _logger.LogInformation($"SearchService is starting.");
+
+        cancellationToken.Register(() =>
+            _logger.LogInformation($" SearchService background task is stopping."));
+
+        Task.Run(() =>
+        {
+            _=ServiceLoopAsync(cancellationToken);
+        });
+
+        _logger.LogInformation($"SearchService background task is stopping.");
+        return Task.CompletedTask;
+    }
+
+    private async Task ServiceLoopAsync(CancellationToken cancellationToken)
+    {
+        while (!cancellationToken.IsCancellationRequested)
+        {
+            //check or do stuff here...
+            _logger.LogInformation($"SearchService task doing background work.");
+
+            //wait a while...
+            await Task.Delay(_settings.Value.UpdateTime, cancellationToken);
+        }
+
+    }
+
+    public Task StopAsync(CancellationToken cancellationToken)
+    {
+        return Task.CompletedTask;
+    }
+
+
+
+}
