@@ -7,8 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 services.AddControllersWithViews();
 
-services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
-   .AddNegotiate();
+services.AddAuthentication(NegotiateDefaults.AuthenticationScheme).AddNegotiate();
 
 services.AddAuthorization(options =>
 {

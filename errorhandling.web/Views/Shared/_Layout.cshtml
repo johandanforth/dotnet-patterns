@@ -1,10 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@using System.Diagnostics
+@using errorhandling.web.Extensions
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - errorhandling.web</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/toastr/toastr.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/errorhandling.web.styles.css" asp-append-version="true" />
 </head>
@@ -43,7 +46,20 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/toastr/toastr.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        toastr.options.positionClass = "toast-bottom-right";
+        @foreach(var alert in TempData.GetAlerts())
+        {
+            @Html.Raw("console.log('" + alert.Message + "');")
+            @Html.Raw("toastr." + alert.AlertLevel + "('" + alert.Message + "');")
+        }
+
+    </script>
+
 </body>
 </html>

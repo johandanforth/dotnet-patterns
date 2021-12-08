@@ -41,6 +41,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LongRunning.Web", "LongRunn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LongRunning.WebApi", "LongRunning.WebApi\LongRunning.WebApi.csproj", "{CC5D5A10-302B-42DF-9D79-A9BC0DDE0732}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution files", ".solution files", "{68A4E9C1-571F-4570-B79A-6DA3DB1C795C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

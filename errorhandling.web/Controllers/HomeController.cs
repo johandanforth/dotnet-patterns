@@ -1,4 +1,5 @@
-﻿using errorhandling.web.Models;
+﻿using errorhandling.web.Extensions;
+using errorhandling.web.Models;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,7 +26,7 @@ public class HomeController : Controller
 
     public IActionResult AjaxCall(bool shouldFail = false)
     {
-        if (shouldFail)
+        if(shouldFail)
             //throw new Exception("Something bad happened!");
             //return StatusCode(500, "Baaaad!");
             return StatusCode(500, new ErrorMessage("Something bad happened", new Exception("An Exception Message goes here")));
@@ -35,6 +36,30 @@ public class HomeController : Controller
             message = "Hello World"
         };
         return new JsonResult(result);
+    }
+
+    public IActionResult HrefError()
+    {
+        try
+        {
+            throw new Exception("Oh no!!");
+        }
+        catch(Exception e)
+        {
+            return RedirectToAction(nameof(Index)).WithError(e.Message);
+        }
+        return RedirectToAction(nameof(Index));
+    }
+
+    public IActionResult HrefErrorMany()
+    {
+        TempData.Error("Error 1");
+        return RedirectToAction(nameof(Index)).WithError("Error 2");
+    }
+
+    public IActionResult HrefOk()
+    {
+        return RedirectToAction(nameof(Index)).WithSuccess("All is well!");
     }
 
     public IActionResult Privacy()
