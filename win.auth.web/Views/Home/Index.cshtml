@@ -5,6 +5,34 @@
 <div class="row">
     <div class="col">
         <h2>Call Win Api protected with Windows Authentication, impersonated.</h2>
-        <a asp-action="CallWebApi" class="btn btn-dark">Call Web Api</a>
+        <a id="btn" class="btn btn-dark">Call Web Api</a>
     </div>
 </div>
+
+@section Scripts
+{
+<script>
+    toastr.options.positionClass = "toast-bottom-right";
+
+    let btn = document.getElementById("btn");
+    btn.addEventListener('click',e => {
+        fetch('/Home/CallWebApi').then(response => {
+            if (!response.ok) {
+                console.error(response);
+                response.json().then(function(data) {
+                    toastr.error(data.message);
+                });
+                return;
+            }
+            response.json().then(function(data) {
+                toastr.success(data.message);
+            });
+
+        }).catch(error => {
+            ajaxCallResultEl.innerText = "Something really bad happened. Error: " + error;
+        });
+    });
+
+
+</script>
+}

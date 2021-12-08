@@ -43,14 +43,11 @@ public class HomeController : Controller
                     message = content
                 };
                 return Json(data);
-
-
             });
 
             return result;
 #pragma warning restore CA1416 // Validate platform compatibility
         }
-
 
         var data = new
         {
