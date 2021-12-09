@@ -15,10 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "security", "security", "{C6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ui", "ui", "{B04E0B66-F739-4713-BB73-95B619BCB8A8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web api", "web api", "{0D5F0E37-176B-4E6B-872F-7F5BCAE703CF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web client", "web client", "{056A2930-8AD2-4A30-95A2-8CA27083A7FD}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "basic-repository", "data-access\basic-repository\basic-repository.csproj", "{EF172AA3-EA50-4EAE-97D1-BE8992DC78B0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data-access-tests", "data-access-tests\data-access-tests.csproj", "{7E227B21-28F4-407A-AF1B-0F3D01BE4FF8}"
@@ -31,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "win.auth.webapi", "win.auth
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "errorhandling.web", "errorhandling.web\errorhandling.web.csproj", "{7C5D182F-E1AE-4981-A2C2-0823BEF31012}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mvc with petit-vue", "mvc with petit-vue", "{FEED6FE9-A076-4FBF-BBE8-54C51CC9F0E0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mvc with vue", "mvc with vue", "{FEED6FE9-A076-4FBF-BBE8-54C51CC9F0E0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mvc with blazor server", "mvc with blazor server", "{1ED65FD6-6F3E-44D1-8AAB-CF1A4CCDD00D}"
 EndProject
@@ -42,6 +38,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LongRunning.WebApi", "LongRunning.WebApi\LongRunning.WebApi.csproj", "{CC5D5A10-302B-42DF-9D79-A9BC0DDE0732}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution files", ".solution files", "{68A4E9C1-571F-4570-B79A-6DA3DB1C795C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mvc.vue", "mvc.petit-vue\mvc.vue.csproj", "{2AFA1856-60A2-4F91-A597-A0178C07646F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +79,10 @@ Global
 		{CC5D5A10-302B-42DF-9D79-A9BC0DDE0732}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC5D5A10-302B-42DF-9D79-A9BC0DDE0732}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC5D5A10-302B-42DF-9D79-A9BC0DDE0732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AFA1856-60A2-4F91-A597-A0178C07646F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AFA1856-60A2-4F91-A597-A0178C07646F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AFA1856-60A2-4F91-A597-A0178C07646F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AFA1856-60A2-4F91-A597-A0178C07646F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +99,7 @@ Global
 		{1ED65FD6-6F3E-44D1-8AAB-CF1A4CCDD00D} = {B04E0B66-F739-4713-BB73-95B619BCB8A8}
 		{64A21C9B-6397-4BE1-B13B-83662D48BBA1} = {2EC75A74-DF07-4B3D-8CEF-ECF1A32AECD6}
 		{CC5D5A10-302B-42DF-9D79-A9BC0DDE0732} = {2EC75A74-DF07-4B3D-8CEF-ECF1A32AECD6}
+		{2AFA1856-60A2-4F91-A597-A0178C07646F} = {FEED6FE9-A076-4FBF-BBE8-54C51CC9F0E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1391EE5D-B515-4F58-BABB-640ADF7E6713}

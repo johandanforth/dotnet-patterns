@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+
+<!-- v-scope value can be omitted -->
+<div id="app1" v-scope v-cloak @@mounted="mounted">
+    <p>{{message}}</p>
+    <p>{{ count }}</p>
+    <p>{{ plusOne }}</p>
+    <button @@click="increment">increment</button>
+    <div v-if="show" @@mounted="console.log('mounted on: ', $el)"
+         @@unmounted="console.log('unmounted: ', $el)"></div>
+</div>
+
+<template id="counter-template">
+    My count is {{ count }}
+    <button @@click="inc">++</button>
+</template>
+
+<div id="app2" v-scope="Counter({ initialCount: 1 })"></div>
+<div id="app3" v-scope="new Comp({ initialCount: 2 })"></div>
+
+<script type="module">
+    import { PetiteVueIndex } from "/ts/PetiteVueIndex.js"
+
+    let v = new PetiteVueIndex();
+</script>

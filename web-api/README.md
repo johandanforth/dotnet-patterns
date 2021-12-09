@@ -1,3 +1,0 @@
-# web api
-
-Basic solutions for creating a (REST-based) web api...
