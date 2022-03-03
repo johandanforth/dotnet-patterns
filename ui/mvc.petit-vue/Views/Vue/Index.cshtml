@@ -10,7 +10,14 @@
 
 
 <div id="app">
-    {{ message }}
+	{{ message }}
+    
+	<div class="row">
+		<div class="col">
+			<button v-on:click="postData(1)">post data 1</button>
+			<button v-on:click="postData(2)">post data 2</button>
+		</div>
+	</div>
 </div>
 
     <script type="module">
