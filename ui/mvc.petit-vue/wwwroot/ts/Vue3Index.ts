@@ -1,5 +1,4 @@
 ﻿import { createApp } from '../lib/vue3/vue.esm-browser.js'
-import comp from './Comp.js'
 import MyApp from './MyApp.js'
 
 export class Vue3Index {
