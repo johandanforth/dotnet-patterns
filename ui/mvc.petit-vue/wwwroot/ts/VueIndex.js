@@ -1,6 +1,7 @@
 import Vue from "../lib/vue/vue.esm.browser.min.js";
 export class VueIndex {
     constructor() {
+        Vue.config.devtools = true;
         console.log("VueIndex running!");
         const app = new Vue({
             el: '#app',

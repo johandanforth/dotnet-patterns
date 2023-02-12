@@ -41,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "win.auth.webapi", "security
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mvc with ts and dependency injection", "mvc with ts and dependency injection", "{81D630FE-5028-404E-9A90-8930B0877DFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvc.ts.di", "mvc.ts.di\mvc.ts.di.csproj", "{207765DD-3DB0-4026-81CE-1F2ACB587FF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mvc.ts.di", "mvc.ts.di\mvc.ts.di.csproj", "{207765DD-3DB0-4026-81CE-1F2ACB587FF8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mvc.vue", "ui\mvc.petit-vue\mvc.vue.csproj", "{192A1BD8-82F7-4599-A570-5389C02860F3}"
 EndProject

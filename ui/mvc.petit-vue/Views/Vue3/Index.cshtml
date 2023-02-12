@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Vue 3";
+}
+
+
+<b>App1:</b>
+<div id="app1" >
+    <p>{{message}}</p>
+    <p>{{ count }}</p>
+    <button class="btn btn-primary" @@click="increment">increment</button>
+
+    <hr/>
+    <b>Component:</b><br/>
+    <comp data-name="some name" @@name-changed="nameChanged" />
+</div>
+
+<partial name="Comp"/>
+
+<script src="/ts/Vue3Index.js" type="module"></script>
