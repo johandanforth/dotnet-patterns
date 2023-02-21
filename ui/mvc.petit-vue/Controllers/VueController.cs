@@ -24,6 +24,11 @@ public class VueController : Controller
     {
         return View();
     }
+	
+    public IActionResult Classes()
+    {
+        return View();
+    }
 
   
 }

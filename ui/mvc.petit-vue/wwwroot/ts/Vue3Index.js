@@ -1,15 +1,16 @@
 import { createApp } from '../lib/vue3/vue.esm-browser.js';
 import MyApp from './MyApp.js';
-export class Vue3Index {
-    constructor() {
+var Vue3Index = /** @class */ (function () {
+    function Vue3Index() {
         console.log("app ctor");
-        let a1 = createApp(MyApp);
-        a1.config.errorHandler = (err) => {
+        var a1 = createApp(MyApp);
+        a1.config.errorHandler = function (err) {
             /* handle error */
             console.log(err);
         };
         a1.mount("#app1");
     }
-}
-let v = new Vue3Index();
-//# sourceMappingURL=Vue3Index.js.map
+    return Vue3Index;
+}());
+export { Vue3Index };
+var v = new Vue3Index();

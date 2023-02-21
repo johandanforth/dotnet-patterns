@@ -1,29 +1,28 @@
 import comp from './Comp.js';
 export default {
-    data() {
+    data: function () {
         return {
             count: 0,
             message: "mounted",
             show: false,
         };
     },
-    mounted() {
+    mounted: function () {
         console.log("MyApp mounted");
         this.show = true;
     },
     components: {
-        comp
+        comp: comp
     },
     methods: {
-        increment() {
+        increment: function () {
             console.log("MyApp increment");
             this.show = true;
             this.count++;
         },
-        nameChanged(name) {
+        nameChanged: function (name) {
             console.log(name);
             console.log(comp);
         }
     }
 };
-//# sourceMappingURL=MyApp.js.map

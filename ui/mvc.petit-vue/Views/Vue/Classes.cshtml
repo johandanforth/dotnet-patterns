@@ -1,0 +1,59 @@
+﻿<script type="importmap">
+	{
+	  "imports": {
+		"vue": "https://unpkg.com/vue@2.7.14/dist/vue.esm.browser.js"
+	  }
+	}
+</script>
+
+<div id="app1">
+	<h1>app1</h1>
+	<div>{{ message }}</div>
+</div>
+<div id="app2">
+	<h1>app2</h1>
+	<div>{{ message }}</div>
+</div>
+
+@section Scripts
+{
+
+	<script type="module">
+		
+		import Vue from "vue";
+		//import Component from "vue-class-component";
+
+		//export default class Counter extends Vue {
+		//	// Class properties will be component data
+		//	count = 0
+
+		//	// Methods will be component methods
+		//	increment() {
+		//		this.count++;
+		//	}
+
+		//	decrement() {
+		//		this.count--;
+		//	}
+		//}
+
+		 var app1 = new Vue({
+			 data: {
+				 message: 'hullo from app1'
+			 },
+			 el: "#app1"
+		 });
+		 
+		 class App2 extends Vue {
+			el = "#app2";
+		 }
+		 var app2 = new App2();
+
+		 //var app2 = new Vue({
+			// data: {
+			//	 message: 'hullo from app2'
+			// },
+			// el: "#app2"
+		 //});
+	</script>
+}

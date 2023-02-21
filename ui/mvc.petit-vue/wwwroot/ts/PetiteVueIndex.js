@@ -1,29 +1,30 @@
 import { createApp } from '../lib/petit-vue/petite-vue.es.js';
-class Comp {
-    constructor(props) {
+var Comp = /** @class */ (function () {
+    function Comp(props) {
         console.log("Comp constructed");
         console.log(props);
         this.$template = '#counter-template';
         this.count = props.initialCount;
         this.inc = this.increase;
     }
-    increase() {
+    Comp.prototype.increase = function () {
         this.count++;
-    }
-}
-export class PetiteVueIndex {
-    constructor() {
+    };
+    return Comp;
+}());
+var PetiteVueIndex = /** @class */ (function () {
+    function PetiteVueIndex() {
         function Counter(props) {
             return {
                 $template: '#counter-template',
                 count: props.initialCount,
-                inc() {
+                inc: function () {
                     this.count++;
                 }
             };
         }
-        createApp({ Counter }).mount("#app2");
-        createApp({ Comp }).mount("#app3");
+        createApp({ Counter: Counter }).mount("#app2");
+        createApp({ Comp: Comp }).mount("#app3");
         createApp({
             // exposed to all expressions
             count: 0,
@@ -34,15 +35,16 @@ export class PetiteVueIndex {
                 return this.count + 1;
             },
             // methods
-            mounted() {
+            mounted: function () {
                 console.log("mounted!");
                 this.show = true;
             },
-            increment() {
+            increment: function () {
                 this.show = true;
                 this.count++;
             }
         }).mount("#app1");
     }
-}
-//# sourceMappingURL=PetiteVueIndex.js.map
+    return PetiteVueIndex;
+}());
+export { PetiteVueIndex };

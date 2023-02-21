@@ -1,17 +1,17 @@
 import Vue from "../lib/vue/vue.esm.browser.min.js";
-export class VueIndex {
-    constructor() {
+var VueIndex = /** @class */ (function () {
+    function VueIndex() {
         Vue.config.devtools = true;
         console.log("VueIndex running!");
-        const app = new Vue({
+        var app = new Vue({
             el: '#app',
             data: {
                 message: 'Hello Vue!!!'
             },
             methods: {
-                postData(id) {
+                postData: function (id) {
                     console.log("post here");
-                    const data = {
+                    var data = {
                         id: 1,
                         name: 'johan'
                     };
@@ -23,18 +23,19 @@ export class VueIndex {
                         method: 'post',
                         body: JSON.stringify(data)
                     })
-                        .then((res) => res.text())
-                        .then((text) => {
+                        .then(function (res) { return res.text(); })
+                        .then(function (text) {
                         var ret = text.length ? JSON.parse(text) : {};
                         console.log(ret);
                         return ret;
                     })
-                        .catch((error) => {
+                        .catch(function (error) {
                         throw error;
                     });
                 }
             }
         });
     }
-}
-//# sourceMappingURL=VueIndex.js.map
+    return VueIndex;
+}());
+export { VueIndex };
