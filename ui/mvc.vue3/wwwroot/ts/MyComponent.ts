@@ -2,7 +2,7 @@ import { Component, Emit, Prop, Vue } from 'vue-facing-decorator'
 
 @Component({
     template: "#my-component",
-    emits: ["nameChanged"]
+    //emits: ["nameChanged"]
 })
 export default class MyComponent extends Vue {
 

@@ -27,7 +27,7 @@ __decorate([
 MyComponent = __decorate([
     Component({
         template: "#my-component",
-        emits: ["nameChanged"]
+        //emits: ["nameChanged"]
     })
 ], MyComponent);
 export default MyComponent;
