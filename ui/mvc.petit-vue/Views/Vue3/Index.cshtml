@@ -2,18 +2,30 @@
     ViewData["Title"] = "Vue 3";
 }
 
+<div id="app1">
+	<div class="row">
+		<div class="col">
+			<h1>App</h1>
+			<p>{{message}}</p>
+			<p>{{ count }}</p>
+			<button class="btn btn-primary" @@click="increment">increment</button>
+		</div>
+		<div class="col">
+			<h2>Comp 1</h2>
+			<comp data-name="some name" @@name-changed="nameChanged"/>
+		</div>
+		<div class="col">
+			<h3>Comp 2</h3>
+			<comp2 data-name="some name" @@name-changed="nameChanged" />
+		</div>
+	</div>
 
-<b>App1:</b>
-<div id="app1" >
-    <p>{{message}}</p>
-    <p>{{ count }}</p>
-    <button class="btn btn-primary" @@click="increment">increment</button>
-
-    <hr/>
-    <b>Component:</b><br/>
-    <comp data-name="some name" @@name-changed="nameChanged" />
 </div>
 
 <partial name="Comp"/>
+<partial name="Comp2"/>
 
 <script src="/ts/Vue3Index.js" type="module"></script>
+<script type="module">
+
+</script>

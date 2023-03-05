@@ -1,0 +1,44 @@
+﻿@page
+@model IndexModel
+@{
+	ViewData["Title"] = "Home page";
+}
+
+<div id="app">
+	<div class="row">
+		<div class="col-6">
+			<h1>My app</h1>
+			<b>Count:</b> <span>{{ count }}</span><br />
+			<button class="btn btn-primary" v-on:click="increment">increment</button>
+			<fieldset>
+				<legend>Messages:</legend>
+				<pre>{{messages}}</pre>
+			</fieldset>
+		</div>
+		<div class="col-6">
+			<h3>My Component</h3>
+			<my-component data-name="some name" v-on:name-changed="nameChanged" />
+		</div>
+	</div>
+
+</div>
+
+<partial name="MyComponent" />
+
+<script type="importmap">
+	{
+		"imports":{
+			"vue": "https://unpkg.com/vue@3/dist/vue.esm-browser",
+			"vue-facing-decorator":"https://unpkg.com/vue-facing-decorator@2.1.14/dist/esm/index",
+			"MyApp":"./ts/MyApp.js"
+		}
+	}
+</script>
+<script type="module">
+	import MyApp from 'MyApp'
+	import { createApp } from 'vue'
+
+	var app = createApp(MyApp);
+	app.mount("#app");
+
+</script>

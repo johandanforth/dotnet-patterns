@@ -1,4 +1,5 @@
 import comp from './Comp.js'
+import comp2 from './Comp2.js'
 
 export default {
     data() {
@@ -13,7 +14,7 @@ export default {
         this.show = true;
     },
     components: {
-        comp
+        comp,comp2
     },
     methods: {
         increment() {

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@babel/types": "^7.21.2",
+    "@types/npm": "^7.19.0",
+    "vue": "^3.2.47",
+    "vue-facing-decorator": "^2.1.14"
+  }
+}

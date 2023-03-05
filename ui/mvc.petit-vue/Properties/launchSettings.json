@@ -3,7 +3,7 @@
     "mvc.vue": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "vue/classes",
+      "launchUrl": "vue3",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

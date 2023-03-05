@@ -45,6 +45,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mvc.ts.di", "mvc.ts.di\mvc.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mvc.vue", "ui\mvc.petit-vue\mvc.vue.csproj", "{192A1BD8-82F7-4599-A570-5389C02860F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvc.vue3", "ui\mvc.vue3\mvc.vue3.csproj", "{C9E03324-0172-479D-96B5-9669DF817CFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{192A1BD8-82F7-4599-A570-5389C02860F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{192A1BD8-82F7-4599-A570-5389C02860F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{192A1BD8-82F7-4599-A570-5389C02860F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E03324-0172-479D-96B5-9669DF817CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E03324-0172-479D-96B5-9669DF817CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E03324-0172-479D-96B5-9669DF817CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E03324-0172-479D-96B5-9669DF817CFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +116,7 @@ Global
 		{81D630FE-5028-404E-9A90-8930B0877DFF} = {B04E0B66-F739-4713-BB73-95B619BCB8A8}
 		{207765DD-3DB0-4026-81CE-1F2ACB587FF8} = {81D630FE-5028-404E-9A90-8930B0877DFF}
 		{192A1BD8-82F7-4599-A570-5389C02860F3} = {FEED6FE9-A076-4FBF-BBE8-54C51CC9F0E0}
+		{C9E03324-0172-479D-96B5-9669DF817CFA} = {FEED6FE9-A076-4FBF-BBE8-54C51CC9F0E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1391EE5D-B515-4F58-BABB-640ADF7E6713}

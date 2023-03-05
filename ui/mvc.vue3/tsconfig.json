@@ -1,0 +1,23 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "experimentalDecorators": true
+  },
+  "include": [
+    "wwwroot/ts"
+  ],
+    "exclude": [
+    "node_modules"
+  ]
+}

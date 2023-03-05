@@ -5,9 +5,9 @@ export default {
     emits: {
         nameChanged: String
     },
-    template: "#comp",
+    template: "#comp2",
     mounted: function () {
-        console.log("component1 mounted");
+        console.log("component 2 mounted");
         console.log(this);
         console.log(this.name);
     },
@@ -16,13 +16,13 @@ export default {
     },
     data: function () {
         return {
-            message: "component 1 message",
+            message: "component 2 message",
             name: this.dataName, //from props
         };
     },
     methods: {
         changeName: function () {
-            this.name = "some other name";
+            this.name = "some other name in comp2";
             this.$emit("nameChanged", this.name);
         }
     }
