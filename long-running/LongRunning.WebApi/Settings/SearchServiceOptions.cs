@@ -1,4 +1,4 @@
-﻿namespace LongRunning.WebApi2.Settings;
+﻿namespace LongRunning.WebApi.Settings;
 
 public class SearchServiceOptions
 {

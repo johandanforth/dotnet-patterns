@@ -1,13 +1,12 @@
-
-using LongRunning.WebApi2.Services;
-using LongRunning.WebApi2.Settings;
+using LongRunning.WebApi.Services;
+using LongRunning.WebApi.Settings;
 
 using Microsoft.AspNetCore.Server.IISIntegration;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
-string MyAllowedSpecificOrigins = "_myAllowedSpecificOrigins";
+const string myAllowedSpecificOrigins = "_myAllowedSpecificOrigins";
 
 //config options settings
 services.Configure<SearchServiceOptions>(builder.Configuration.GetSection(nameof(SearchServiceOptions)));
@@ -15,7 +14,7 @@ services.Configure<SearchServiceOptions>(builder.Configuration.GetSection(nameof
 services.AddCors(options =>
 {
 
-    options.AddPolicy(MyAllowedSpecificOrigins, corsPolicyBuilder =>
+    options.AddPolicy(myAllowedSpecificOrigins, corsPolicyBuilder =>
     {
         corsPolicyBuilder.WithOrigins("https://allowedhost.se");
     });
@@ -40,10 +39,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors(MyAllowedSpecificOrigins);
+app.UseCors(myAllowedSpecificOrigins);
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers().RequireCors(MyAllowedSpecificOrigins);
+app.MapControllers().RequireCors(myAllowedSpecificOrigins);
 
 app.Run();

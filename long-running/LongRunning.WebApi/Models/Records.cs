@@ -1,3 +1,3 @@
-﻿namespace LongRunning.WebApi2.Models;
+﻿namespace LongRunning.WebApi.Models;
 
 internal record ErrorMessage(string Message, Exception? Exception);

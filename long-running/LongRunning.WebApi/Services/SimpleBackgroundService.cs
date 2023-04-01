@@ -1,9 +1,8 @@
-﻿
-using LongRunning.WebApi2.Settings;
+﻿using LongRunning.WebApi.Settings;
 
 using Microsoft.Extensions.Options;
 
-namespace LongRunning.WebApi2.Services;
+namespace LongRunning.WebApi.Services;
 
 public class SimpleBackgroundService : BackgroundService 
 {

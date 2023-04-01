@@ -1,8 +1,8 @@
-﻿using LongRunning.WebApi2.Models;
+﻿using System.Collections.Concurrent;
 
-using System.Collections.Concurrent;
+using LongRunning.WebApi.Models;
 
-namespace LongRunning.WebApi2.Services;
+namespace LongRunning.WebApi.Services;
 
 public class SearchService
 {

@@ -1,11 +1,11 @@
-﻿using LongRunning.WebApi2.Models;
-using LongRunning.WebApi2.Services;
+﻿using LongRunning.WebApi.Models;
+using LongRunning.WebApi.Services;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LongRunning.WebApi2.Controllers;
+namespace LongRunning.WebApi.Controllers;
 
 /// <summary>
 /// Handles search results

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace LongRunning.WebApi2.Models;
+namespace LongRunning.WebApi.Models;
 
 public class Search
 {

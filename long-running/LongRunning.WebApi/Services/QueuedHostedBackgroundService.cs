@@ -1,4 +1,4 @@
-﻿namespace LongRunning.WebApi2.Services;
+﻿namespace LongRunning.WebApi.Services;
 
 /// <summary>
 /// Pops items from the background task queue and runs them

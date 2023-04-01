@@ -1,6 +1,6 @@
 ﻿using System.Threading.Channels;
 
-namespace LongRunning.WebApi2.Services;
+namespace LongRunning.WebApi.Services;
 
 public interface IBackgroundTaskQueue
 {
