@@ -1,0 +1,1 @@
+{"version":3,"file":"methodsAndHooks.d.ts","sourceRoot":"","sources":["../../src/option/methodsAndHooks.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,IAAI,EAAE,MAAM,cAAc,CAAA;AACnC,OAAO,EAAE,aAAa,EAAE,MAAM,kBAAkB,CAAA;AAGhD,eAAO,MAAM,SAAS,oQAkBZ,CAAA;AAEV,oBAAY,UAAU,GAAG,IAAI,CAAA;AAC7B,eAAO,MAAM,SAAS;;;CAIpB,CAAA;AAGF,wBAAgB,KAAK,CAAC,IAAI,EAAE,IAAI,EAAE,aAAa,EAAE,aAAa,QA8C7D"}

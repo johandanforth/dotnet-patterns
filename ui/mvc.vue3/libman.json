@@ -154,6 +154,10 @@
         "dist/option/watch.js",
         "dist/option/watch.js.map"
       ]
+    },
+    {
+      "library": "vue-virtual-scroller@next",
+      "destination": "wwwroot/lib/vue-virtual-scroller/"
     }
   ]
 }

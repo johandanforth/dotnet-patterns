@@ -3,6 +3,19 @@
 @{
 	ViewData["Title"] = "Home page";
 }
+<style scoped>
+	.scroller {
+		height: 100%;
+	}
+
+	.user {
+		height: 32%;
+		padding: 0 12px;
+		display: flex;
+		align-items: center;
+	}
+</style>
+<link href="~/lib/vue-virtual-scroller/dist/vue-virtual-scroller.css" rel="stylesheet" />
 
 <div id="app">
 	<div class="row">
@@ -20,16 +33,36 @@
 			<my-component data-name="some name" v-on:name-changed="nameChanged" />
 		</div>
 	</div>
-
+	<div class="row">
+		<div class="col">
+			<RecycleScroller
+				class="scroller"
+				:items="list"
+				:item-size="32"
+				key-field="id"
+				v-slot="{ item }"
+			>
+				<div class="user">
+					{{ item.name }}
+				</div>
+			</RecycleScroller>
+		</div>
+	</div>
 </div>
 
 <partial name="MyComponent" />
+
+
 
 <script type="importmap">
 	{
 		"imports":{
 			"vue": "https://unpkg.com/vue@3/dist/vue.esm-browser",
 			"vue-facing-decorator":"https://unpkg.com/vue-facing-decorator@2.1.14/dist/esm/index",
+			"vue-virtual-scroller":"/lib/vue-virtual-scroller/dist/vue-virtual-scroller.esm.js",
+			"vue-resize":"/lib/vue-resize/dist/vue-resize.esm.js",
+			"vue-observe-visibility":"/lib/vue-observe-visibility/dist/vue-observe-visibility.esm.js",
+			"mitt":"/lib/mitt/dist/mitt.es.js",
 			"MyApp":"./ts/MyApp.js"
 		}
 	}
@@ -37,8 +70,11 @@
 <script type="module">
 	import MyApp from 'MyApp'
 	import { createApp } from 'vue'
+	import { RecycleScroller } from 'vue-virtual-scroller'
 
 	var app = createApp(MyApp);
+	app.component('RecycleScroller', RecycleScroller)
+
 	app.mount("#app");
 
 </script>

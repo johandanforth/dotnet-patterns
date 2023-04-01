@@ -1,4 +1,5 @@
 import { Component, Emit, Prop, Vue } from 'vue-facing-decorator'
+import VueVirtualScroller from 'vue-virtual-scroller'
 
 @Component({
     template: "#my-component",

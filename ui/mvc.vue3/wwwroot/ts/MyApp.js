@@ -4,10 +4,18 @@ export default {
         return {
             count: 0,
             messages: "mounted",
+            list: [],
+            items: [],
         };
     },
     mounted() {
         this.addMessage("MyApp mounted");
+        for (var i = 0; i < 1000; i++) {
+            this.list.push({
+                id: i,
+                name: "Item " + i
+            });
+        }
     },
     components: {
         MyComponent

@@ -1,0 +1,72 @@
+﻿@page
+@model PrivacyModel
+@{
+	Layout = null;
+}
+
+<html>
+<head>
+	<title>vue virtual scroller sample</title>
+	
+	<link href="https://unpkg.com/vue-virtual-scroller@2.0.0-beta.8/dist/vue-virtual-scroller.css" rel="stylesheet" />
+	<style scoped>
+		.scroll-container {
+			height: 300px;
+		}
+
+		.scroller {
+			height: 100%;
+		}
+
+		.user {
+			height: 32%;
+			padding: 0 12px;
+		}
+	</style>
+
+</head>
+<body>
+	<h2>Virtual Scroller</h2>
+
+	<div id="app">
+		<div class="scroll-container">
+			<recycle-scroller class="scroller"
+							  :items="list"
+							  :item-size="32"
+							  key-field="id"
+							  v-slot="{ item }">
+				<div class="user">
+					{{ item.name }}
+				</div>
+			</recycle-scroller>
+		</div>
+	</div>
+
+	<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+	<script src="https://unpkg.com/vue-virtual-scroller@2.0.0-beta.8/dist/vue-virtual-scroller.min.js"></script>
+
+	<script>
+		const { createApp } = Vue;
+
+		var app = createApp({
+			data() {
+				return {
+					list: []
+				}
+			},
+			mounted() {
+				console.log("mounted");
+				for (let i = 0; i < 10000; i++) {
+					this.list.push({
+						id: i,
+						name: "item " + i
+					});
+				}
+			}
+		});
+
+		app.component('RecycleScroller', VueVirtualScroller.DynamicScroller);
+		app.mount('#app');
+	</script>
+</body>
+</html>
